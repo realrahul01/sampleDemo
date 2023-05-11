@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promsie</h1>
+    <div id="container"></div>
+<script>
+//Exercise 1
+// function my_promise(timer){
+//     // console.log(timer)
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(`the promise is resolve after ${timer} sec`)
+//         }, timer);
+//     })
+// }
+
+// my_promise(1000).then((data)=>{
+//     console.log(`Rahul ${data}`)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+
+//Exercise 2
+// function append(data){
+//     let container = document.getElementById("container")
+//     data.forEach((e)=>{
+//         let img = document.createElement("img")
+//         img.src = e.avatar
+//         let p = document.createElement("p")
+//         p.innerText = `${e.first_name} ${e.last_name}`
+//         // let div = document.createElement("div")
+//         // div.append(img,p)  
+//         container.append(img,p) 
+//     })
+// }
+
+// let url = "https://reqres.in/api/users?pge=2"
+// let promise = fetch(url);
+// promise.then((res)=>{
+//     console.log(res)
+//     return res.json()
+// }).then((res)=>{
+//     console.log(res)
+//     append(res.data)
+// })
+
+
+//Exercise 3
+// function append(data){
+//     data.forEach((e)=>{
+//         let img = document.createElement("img")
+//         img.src = e.avatar;
+//         let p = document.createElement("p")
+//         p.innerHTML = `${e.first_name}${e.last_name}`      
+//         container.append(img,p)
+//     })
+// }
+
+
+// let promise = fetch("https://jsonplaceholder.typicode.com/todos")
+// promise.then((res)=>{
+//     // console.log(res)
+//     return res.json()
+// }).then((e)=>{
+//   console.log(e)
+// }).then((res)=>{
+//     console.log(res)
+// })
+
+
+
+//Exercise 4
+// const url = "https://fakestoreapi.com/products"
+// async function getdata(){
+//     try{
+//         let res = await fetch(url);
+//         console.log(res)
+//         let data = await res.json();
+//         // console.log(data)
+//         append(data)
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
+// getdata()
+
+// function append(data){
+//     let container = document.getElementById("container")
+//     data.sort((a,b)=>{
+//         return a.price-b.price
+//     })      
+//     console.log(data)
+//     let a = data.filter((x)=>{
+//         return x.category == "women's clothing"
+//     })
+//     console.log(a)
+//     data.forEach((e)=>{
+//         let img = document.createElement("img")
+//         img.src = e.image
+//         let p = document.createElement("p")
+//         p.innerText = e.title
+//         let p1 = document.createElement("p")
+//         p1.innerText = e.description
+//         let p2 = document.createElement("p")
+//         p2.innerText = e.price
+//         container.append(img,p,p1,p2)
+//     })
+// }
+
+
+
+//Exercise 5
+// const url = "https://624094e02aeb48a9af754d5f.mockapi.io/ticket";
+// async function appendData(){
+//   try{
+//     let res = await fetch(url)
+//     console.log(res)
+//     let data = await res.json()
+//     console.log(data)
+//     append(data)
+//   }catch(error){
+//     console.log(error)
+//   }
+// }
+// appendData()
+
+// function append(data){
+//   let container = document.getElementById("container")
+//   data.forEach((e)=>{
+//     let p = document.createElement("p")
+//     let hr = document.createElement("hr")
+//     p.innerText = e.character
+//     p.style.fontSize = "80px"
+//     let p1 = document.createElement("p")
+//     p1.innerText = e.name
+//     p1.style.color = "blue"
+//     container.append(p,p1,hr)
+//   }) 
+// }
+
+
+
+//Exercise 6
+// const url = "https://jsonplaceholder.typicode.com/todos";
+// async function appendData(){
+//   try{
+//     let res = await fetch(url)
+//   console.log(res)
+//   const data = await res.json()
+//   console.log(data)
+//   append(data)
+//   }catch(error){
+//     console.log(error)
+//   }
+// }
+// appendData()
+
+// function append(data){
+//     const container = document.getElementById("container")
+//     data.forEach((e)=>{
+//         let span = document.createElement("span")
+//         let span1 = document.createElement("span")
+//         let hr = document.createElement("hr")
+//         span.innerText = `"${e.title}"`
+//         span1.innerText = ` Status : ${e.completed}`
+//         if (e.completed===true) {
+//           span1.style.backgroundColor="green"
+//         } else {
+//           span1.style.backgroundColor="red"
+//         }
+//         container.append(span,span1,hr)
+//     })
+// }
+
+
+
+//Exercise 7
+// function append(data) {
+//     console.log(data)
+//     let container = document.getElementById("container")
+//     data.forEach(function(ele) {
+//         // let img = document.createElement("img")   
+//         let p = document.createElement("p");
+//         let p1 = document.createElement("p");
+//         let hr = document.createElement("hr")
+//         p1.innerHTML = `${ele.character}`
+//         p1.style.fontSize = "60px "
+//         p.innerHTML = `${ele.name}`
+
+//         container.append(p1,p,hr)
+//     }) 
+
+// const data=fetch("https://624094e02aeb48a9af754d5f.mockapi.io/ticket")
+//     .then(function(res) {
+//         console.log(res);
+//         return res.json()
+//     })
+//     .then(function (val) {
+//         console.log(val)
+//         append(val)
+//     })
+
+
+//Exercise 8
+// const url = "https://jsonplaceholder.typicode.com/todos"
+// async function appendData(){
+//   try{
+//     let res = await fetch(url)
+//     console.log(res)
+//     let data  = await res.json()
+//     console.log(data)
+//     append(data)
+//   }catch(error){
+//     console.log(error)
+//   }
+// }
+// appendData()
+
+// function  append(data){
+//   let container = document.getElementById("container")
+//   data.forEach((e)=>{                                                                                         
+//     let span = document.createElement("span")
+//     let span1 = document.createElement("span")
+//     let hr = document.createElement("hr")
+//     span.innerText= `"${e.title}"`
+//     span1.innerText = `status : ${e.completed} `
+//     if (e.completed===true) {
+//       span1.style.backgroundColor = "green"
+//     } else {
+//       span1.style.backgroundColor = "red"
+//     }
+//     container.append(span,span1,hr)
+
+//   })
+// }
+
+
+// Exercise 9
+// const url = "https://jsonplaceholder.typicode.com/todos";
+// async function appendData(){
+//   try{
+//     let res = await fetch(url)
+//   console.log(res)
+//   const data = await res.json()
+//   console.log(data)
+//   append(data)
+//   }catch(error){
+//     console.log(error)
+//   }
+// }
+// appendData()
+
+// function append(data){
+//     const container = document.getElementById("container")
+//     data.forEach((e)=>{
+//         let span = document.createElement("span")
+//         let span1 = document.createElement("span")
+//         let hr = document.createElement("hr")
+//         span.innerText = `"${e.title}"`
+//         span1.innerText = `Status : ${e.completed}`
+//         if (e.completed===true) {
+//           span1.style.backgroundColor="green"
+//         } else {
+//           span1.style.backgroundColor="red"
+//         }
+//         container.append(span,span1,hr)
+//     })
+// }
+
+
+//Exercise 10
+//changing background color instering a new button `    
+// const url = "https://jsonplaceholder.typicode.com/todos"
+// console.log(url)
+
+// async function getData(){
+//     try{
+//         let res = await fetch(url)
+//         console.log(res)
+//         let data = await res.json()
+//         console.log(data)
+//         append(data)
+//     }catch{
+//         console.log("error")
+//     }
+// }
+// getData()
+
+// function append(data){
+//     const container = document.getElementById("container")
+//     data.forEach((e)=>{
+//     let p = document.createElement("p")
+//     let button = document.createElement("button")
+//     button.innerText = "Change Color"
+//     button.style.marginLeft = "20px"
+//     button.style.backgroundColor = "blue"
+//     button.style.color = "white"
+//     let span = document.createElement("span")
+//     let hr = document.createElement("hr")
+
+    
+//     if (e.completed === true) {
+//         span.style.backgroundColor = "lightGreen"
+//     } else {
+//         span.style.backgroundColor = "red"
+//     }
+
+//     p.innerHTML = `"${e.title}"`
+//     span.innerHTML = ` <b> Status : ${e.completed}</b>`
+
+
+//     function randomColor(){
+//         let red = Math.floor(Math.random()*256)
+//         let green = Math.floor(Math.random()*256)
+//         let blue = Math.floor(Math.random()*256)
+//         return `rgb(${red}, ${green}, ${blue})`
+//     }
+//     randomColor()
+
+
+//     button.addEventListener(("click"),()=>{
+//         const random = randomColor()
+//         console.log(random)
+//         p.style.backgroundColor = random
+//     })
+
+//     p.append(span,button)
+//     container.append(p,hr)
+    
+//     // p.style.backgroundColor = "yellow"
+//     p.style.padding = "15px"
+
+    
+
+// })
+// }
+
+
+//Exercise 11
+// const my_promise = new Promise((resolve,reject)=>{
+//     const value = true;
+//     setTimeout(() => {
+//         if (value) {
+//            resolve("my code is running well") 
+//         }else{
+//             reject("boo")
+//         }
+//     }, 2000);
+// })
+
+// my_promise.then((result)=>{
+//     console.log(result)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+
+// const my_promise = new promise((resolve,reject)=>{
+//     const value = true;
+//     setTimeout(() => {
+//         if (value) {
+//             resolve("we will go to ooty")
+//         }else{
+//             reject("we will not go to ooty")
+//         }
+//         }, 2000);
+//     })
+// my_promise.then((result)=>{
+//     console.log(result)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+
+
+//Exercise 12
+// function my_promise(value){
+//     return new Promise((resolve, reject) => {
+//         if (value===3) {
+//             resolve(`${value} is the correct value`)
+//         }else{
+//             reject(`${value} is not a correct value`)
+//         }
+//     })
+// }
+
+// my_promise(3).then((result)=>{
+//     console.log(result)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+
+
+//Exercise 13
+// function my_promise(){
+//     return new Promise((resolve,reject)=>{
+//         const value = true
+//         if (value) {
+//             resolve("we will go to ooty")
+//         } else {
+//             reject("we will not go to ooty")
+//         }
+//     })
+// }
+
+// my_promise().then((data)=>{
+//     console.log(data)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+
+
+//Exercise 14
+// const url = "https://fakestoreapi.com/products";
+// // console.log(url)
+// async function getData(){
+//     try{
+//         let res = await fetch(url)
+//         console.log(res)
+//         let data = await res.json()
+//         console.log(data)
+//         append(data)
+//     }catch{
+//         console.log("error")
+//     }
+// }
+// getData()
+
+// function append(data){
+//     let container = document.getElementById("container")
+//         let sort = data.sort((a,b)=>{
+//             return a.price - b.price
+//         })
+//         console.log(sort)
+//         data = data.filter((x)=>{
+//             return x.category == "jewelery"
+//         })
+//         console.log(data)
+//     data.forEach((e)=>{
+//         let p = document.createElement("p")
+//         let p1 = document.createElement("p")
+//         let img = document.createElement("img")
+//         p.innerHTML = e.title
+//         p1.innerHTML = `${e.price} $`
+//         img.src = e.image
+//         container.append(img,p,p1)
+        
+//     })
+// }
+
+
+
+// const url = "https://reqres.in/api/users?page=2"
+// // console.log(url)
+// async function getData(){
+//     let res = await fetch(url)
+//     console.log(res)
+//     let data = await res.json()
+//     console.log(data)
+//     append(data)
+// }
+// getData()
+
+
+// function append(data){
+//     let container = document.getElementById("container")
+//     data.forEach((e)=>{
+//         let p = document.createElement("p")
+//         p.innerHTML = e.first_name
+//         container.append(p) 
+//     })
+// }
+
+
+
+
+</script>  
+</body>
+</html>
